@@ -70,7 +70,8 @@ p{margin:0 0 1em;max-width:62ch}
 .legend b{color:var(--gold-soft)}
 .tip{position:absolute;z-index:3;pointer-events:none;background:#fffaf0;color:var(--night);font:700 .85rem var(--body);padding:6px 10px;border-radius:8px;box-shadow:0 8px 20px -8px #000;transform:translate(-50%,-140%);opacity:0;transition:opacity .15s;white-space:nowrap}
 .tip.on{opacity:1}
-@media (max-width:700px){.legend{left:16px;right:16px;text-align:left;bottom:14px}.hero .wrap{padding-top:110px}}
+@media (max-width:900px){.hero{min-height:1040px;align-items:start}.hero .wrap{padding-top:110px}}
+@media (max-width:700px){.legend{left:16px;right:16px;text-align:left;bottom:14px}}
 
 /* The bear */
 .bear{background:var(--cream);padding:clamp(70px,10vw,130px) 0;position:relative}
@@ -177,7 +178,7 @@ footer a{color:var(--gold-soft)}
         </div>
       </div>
     </div>
-    <p class="legend" id="legend">Each gold light is a real Black Mountain or Swannanoa business, church or nonprofit we built a preview site for, set where it stands on the map. <b>Hover one.</b></p>
+    <p class="legend" id="legend">Each gold light is a real Black Mountain or Swannanoa business, church or nonprofit we built a preview site for, set where it stands on the map. <b id="hv">Hover one.</b></p>
   </section>
 
   <section class="bear" aria-label="About">
@@ -315,7 +316,7 @@ footer a{color:var(--gold-soft)}
     dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
     const la=pts.map(p=>p[0]),lo=pts.map(p=>p[1]);
     const [a0,a1,o0,o1]=[Math.min(...la),Math.max(...la),Math.min(...lo),Math.max(...lo)];
-    const wide=W>900, X0=wide?W*.56:W*.06, X1=W*.96, Y0=wide?H*.2:H*.52, Y1=wide?H*.86:H*.9;
+    const wide=W>900, X0=wide?W*.56:W*.06, X1=W*.96, Y0=wide?H*.2:H*.73, Y1=wide?H*.86:H*.9;
     const px=lo=>X0+(lo-o0)/(o1-o0||1)*(X1-X0), py=la=>Y1-(la-a0)/(a1-a0||1)*(Y1-Y0);
     lights=pts.map((p,i)=>({x:px(p[1]),y:py(p[0]),n:p[2],k:p[3],ph:Math.random()*6.28,d:Math.hypot(p[0]-TOWN[0],(p[1]-TOWN[1])*.81)}));
     const town={x:px(TOWN[1]),y:py(TOWN[0])};lay.town=town;
@@ -348,6 +349,7 @@ footer a{color:var(--gold-soft)}
   cv.parentElement.addEventListener('pointermove',e=>{hover=near(e);if(hover>=0){const l=lights[hover];tip.textContent=l.n;tip.style.left=l.x+'px';tip.style.top=l.y+'px';tip.classList.add('on')}else tip.classList.remove('on');if(still)frame(performance.now()+1e5)});
   lay();addEventListener('resize',()=>{lay();if(still)frame(performance.now()+1e5)});
   if(still)frame(performance.now()+1e5);else requestAnimationFrame(frame);
+  if(matchMedia('(hover: none)').matches)document.getElementById('hv').textContent='Tap one.';
   document.getElementById('legend').firstChild.textContent=`Each of these ${lights.length} gold lights is a real Black Mountain or Swannanoa business, church or nonprofit we built a preview site for, set where it stands on the map. `;
 })();
 // header turns solid after the hero
