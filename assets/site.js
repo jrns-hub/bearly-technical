@@ -17,7 +17,7 @@
   foot.innerHTML = `<div class="wrap"><div><a class="brand" href="index.html"><img src="img/badge-180.png" alt="" width="48" height="48">Bearly Technical</a>
     <p>A launchpad for small businesses, nonprofits and churches in Black Mountain, the Swannanoa Valley and the Blue Ridge.</p></div>
     <div>${links.map(([h,t])=>`<a href="${h}">${t}</a>`).join("")}</div>
-    <div><a href="book.html">Book a free look</a><a href="tel:+18659781063">Call 865-978-1063</a><a href="sms:+18659781063">Text 865-978-1063</a>
+    <div><a href="book.html">Book a free look</a><a href="tel:+18659781063">Call or text 865-978-1063</a><a href="tel:+18287400010">Call or text 828-740-0010</a>
     <a href="https://jrns-hub.github.io/previews/">All preview sites</a><a href="flyer.html">Print a flyer with a QR code</a></div></div>`;
   document.body.append(foot);
 

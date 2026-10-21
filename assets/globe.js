@@ -2,8 +2,8 @@
 (function () {
   const cv = document.getElementById("globe"); if (!cv) return;
   const cx = cv.getContext("2d"), still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const places = [["Hawaii", 19.7, -155.1], ["Nepal", 27.7, 85.3], ["Kazakhstan", 43.2, 76.9], ["Dubai", 25.2, 55.3], ["Porto", 41.15, -8.6],
-    ["León, Spain", 42.6, -5.57], ["Paris", 48.86, 2.35], ["Bucharest", 44.43, 26.1], ["Yucatán", 20.7, -88.2], ["Florida", 29.9, -81.3],
+  const places = [["Japan", 35.68, 139.69], ["Hawaii", 19.7, -155.1], ["Los Angeles", 34.05, -118.24], ["Bay Area", 37.77, -122.42], ["Nepal", 27.7, 85.3], ["Dubai", 25.2, 55.3], ["Porto", 41.15, -8.6],
+    ["León, Spain", 42.6, -5.57], ["Paris", 48.86, 2.35], ["Bucharest", 44.43, 26.1], ["Yucatán", 20.7, -88.2], ["St. Augustine hub", 29.9, -81.31], ["New York City", 40.71, -74.0],
     ["Texas", 29.4, -95.2], ["New Mexico", 35.1, -106.6], ["Tennessee", 35.96, -85.8], ["Black Mountain", 35.62, -82.32]];
   let W, H, R, rot = -60, tilt = 20, drag = null;
   function size() { const d = Math.min(devicePixelRatio || 1, 2); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * d; cv.height = H * d; cx.setTransform(d, 0, 0, d, 0, 0); R = Math.min(W, H) * 0.42; }
