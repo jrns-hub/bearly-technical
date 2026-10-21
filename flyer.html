@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flyer · Bearly Technical</title>
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Serif:ital@1&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* One letter-size page: print it, post it. Ink-light: white paper, blue and gold accents. */
+@page{size:letter;margin:0}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e4da;font:16px/1.45 "Atkinson Hyperlegible",system-ui,sans-serif;color:#131a2c}
+.page{width:8.5in;height:11in;margin:20px auto;background:#fff;padding:.55in .6in;display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 10px 40px #0002}
+.top{display:flex;align-items:center;gap:22px}
+.top img{width:1.7in;height:1.7in}
+h1{font:800 46px/1 "Bricolage Grotesque",sans-serif;margin:0;letter-spacing:-.02em}
+h1 span{color:#c48a00}
+.poem{font:italic 26px/1.2 "Instrument Serif",serif;color:#2a5ca5;margin:.3em 0 0}
+.mid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;align-content:center}
+.box{border:2px solid #2a5ca5;border-radius:14px;padding:16px}
+.box b{font:800 22px/1.1 "Bricolage Grotesque",sans-serif;display:block;margin-bottom:6px}
+.bottom{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;border-top:3px solid #131a2c;padding-top:22px}
+#qr{width:2.1in;height:2.1in}
+#qr img,#qr canvas{width:100%!important;height:100%!important}
+.big{font:800 34px/1.05 "Bricolage Grotesque",sans-serif}
+.k{color:#475069}
+.no-print{max-width:8.5in;margin:16px auto;display:flex;gap:10px;justify-content:center}
+.no-print button,.no-print a{font:700 16px "Bricolage Grotesque",sans-serif;background:#f5b81c;border:0;padding:12px 22px;border-radius:999px;color:#131a2c;text-decoration:none;cursor:pointer}
+@media print{body{background:#fff}.page{margin:0;box-shadow:none}.no-print{display:none}}
+</style>
+</head>
+<body>
+<div class="no-print"><button onclick="print()">Print this flyer</button><a href="index.html">Back to the site</a></div>
+<div class="page">
+  <div class="top"><img src="img/badge.png" alt="Bearly Technical bear badge" width="720" height="720"><div><h1>Small businesses.<br><span>Big change.</span></h1><p class="poem">A launchpad for the people who keep this valley alive.</p></div></div>
+  <div class="mid">
+    <div class="box"><b>Starting a business?</b>Name, brand, paperwork, website and payments, in the right order, with someone beside you.</div>
+    <div class="box"><b>Already open?</b>Get found on Google, take bookings online, and cut the busywork.</div>
+    <div class="box"><b>Nonprofit or church?</b>Free grant readiness report, grant applications, volunteer and giving pages.</div>
+  </div>
+  <div class="bottom"><div id="qr" aria-label="QR code to the Bearly Technical website"></div>
+    <div><div class="big">Scan for a free look</div><p style="font-size:22px;margin:.4em 0">Call or text <b>865-978-1063</b></p><p class="k">jrns-hub.github.io/bearly-technical · Black Mountain, NC · Flat prices, no contracts, everything in your name.</p></div></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>new QRCode(document.getElementById("qr"),{text:"https://jrns-hub.github.io/bearly-technical/",width:400,height:400,colorDark:"#131a2c",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});</script>
+</body>
+</html>

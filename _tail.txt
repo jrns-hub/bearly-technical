@@ -1,0 +1,4 @@
+</main>
+<script src="assets/site.js"></script>{extra}
+</body>
+</html>
