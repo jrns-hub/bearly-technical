@@ -316,7 +316,7 @@ footer a{color:var(--gold-soft)}
     dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
     const la=pts.map(p=>p[0]),lo=pts.map(p=>p[1]);
     const [a0,a1,o0,o1]=[Math.min(...la),Math.max(...la),Math.min(...lo),Math.max(...lo)];
-    const wide=W>900, X0=wide?W*.56:W*.06, X1=W*.96, Y0=wide?H*.2:H*.73, Y1=wide?H*.86:H*.9;
+    const wide=W>900, X0=wide?W*.56:W*.06, X1=W*.96, Y0=wide?H*.2:H*.62, Y1=wide?H*.86:H*.82;
     const px=lo=>X0+(lo-o0)/(o1-o0||1)*(X1-X0), py=la=>Y1-(la-a0)/(a1-a0||1)*(Y1-Y0);
     lights=pts.map((p,i)=>({x:px(p[1]),y:py(p[0]),n:p[2],k:p[3],ph:Math.random()*6.28,d:Math.hypot(p[0]-TOWN[0],(p[1]-TOWN[1])*.81)}));
     const town={x:px(TOWN[1]),y:py(TOWN[0])};lay.town=town;
