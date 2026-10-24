@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Bearly Technical Business Cards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Print sheet: 10 standard 3.5 x 2 in cards on US Letter, front only, cut on the gray marks. */
+@page{size:letter;margin:0}
+:root{--blue:#2a5ca5;--gold:#f2b51a;--cream:#f4ecdf;--night:#0b1733}
+*{box-sizing:border-box;margin:0}
+html,body{background:#fff}
+.sheet{width:8.5in;height:11in;padding:0.5in 0.75in;display:grid;grid-template-columns:3.5in 3.5in;grid-auto-rows:2in;gap:0}
+.card{position:relative;width:3.5in;height:2in;background:var(--cream);overflow:hidden;outline:0.5px dashed #c9c9c9;
+  font-family:"Atkinson Hyperlegible","Segoe UI",Arial,sans-serif;color:var(--night)}
+.band{position:absolute;left:0;right:0;bottom:0;height:0.38in;background:var(--night);color:var(--cream);
+  display:flex;align-items:center;padding:0 0.14in;font-size:7.6pt;letter-spacing:.02em;gap:.06in}
+.band b{color:var(--gold)}
+.badge{position:absolute;left:0.12in;top:0.13in;width:1.08in;height:1.08in;border-radius:50%}
+.text{position:absolute;left:1.3in;top:0.14in;right:0.12in}
+.name{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;font-size:19pt;line-height:.95;color:var(--blue);letter-spacing:.01em}
+.tag{font-size:7pt;line-height:1.2;margin-top:.04in;max-width:1.16in}
+.phones{position:absolute;left:1.3in;top:1.13in;font-size:8.6pt;font-weight:700;line-height:1.2}
+.phones span{font-weight:400;font-size:6.6pt;color:#4a4f5c;display:block;letter-spacing:.04em;text-transform:uppercase}
+.qr{position:absolute;right:0.12in;top:0.62in;width:0.86in;height:0.86in;background:#fff;padding:0.04in;border-radius:4px}
+.qr img,.qr canvas{width:100%!important;height:100%!important;display:block}
+.bolt{color:var(--gold)}
+@media screen{body{background:#ddd}.sheet{margin:20px auto;background:#fff;box-shadow:0 2px 12px #0003}}
+</style></head><body>
+<div class="sheet" id="sheet"></div>
+<template id="t">
+  <div class="card">
+    <img class="badge" src="img/badge-180.png" alt="Bearly Technical bear badge">
+    <div class="text">
+      <div class="name">Bearly<br>Technical</div>
+      <div class="tag">Websites, grants and tech help for Swannanoa Valley businesses and nonprofits</div>
+    </div>
+    <div class="phones"><span>Call or text</span>865-978-1063<br>828-740-0010</div>
+    <div class="qr"></div>
+    <div class="band"><span class="bolt">&#9889;</span><span><b>Local? 50% off.</b> Scan for prices and a free look at your site</span></div>
+  </div>
+</template>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const sheet=document.getElementById("sheet"),t=document.getElementById("t");
+for(let i=0;i<10;i++){const c=t.content.cloneNode(true);new QRCode(c.querySelector(".qr"),{text:"https://jrns-hub.github.io/bearly-technical/",width:300,height:300,colorDark:"#0b1733",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});sheet.appendChild(c);}
+</script>
+</body></html>
