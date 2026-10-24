@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Bearly Technical Trifold Card</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Trifold pocket card: flat 10.5 x 2 in, folds to 3.5 x 2 in. Page 1 = outside, page 2 = inside.
+   Letter landscape, 4 cards per sheet. Print double-sided, flip on SHORT edge. Art slots: --art-* (swap in Nano Banana images). */
+@page{size:11in 8.5in;margin:0}
+:root{--blue:#2a5ca5;--gold:#f2b51a;--cream:#f4ecdf;--night:#0b1733;--ink:#131a2c;
+  --art-cover:none;--art-inside:none}
+*{box-sizing:border-box;margin:0}
+html,body{background:#fff;font-family:"Atkinson Hyperlegible","Segoe UI",Arial,sans-serif;color:var(--ink)}
+.page{width:11in;height:8.5in;padding:0.25in 0.25in;display:grid;grid-template-rows:repeat(4,2in);row-gap:0.05in;page-break-after:always;align-content:center;justify-content:center}
+.strip{width:10.5in;height:2in;display:grid;grid-template-columns:3.5in 3.5in 3.5in;outline:0.5px dashed #bbb;position:relative}
+.strip::before,.strip::after{content:"";position:absolute;top:-0.08in;bottom:-0.08in;width:0;border-left:0.5px dotted #999}
+.strip::before{left:3.5in}.strip::after{left:7in}
+.p{position:relative;overflow:hidden;padding:0.14in 0.16in}
+.h{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;line-height:.95;letter-spacing:.01em}
+.small{font-size:6.6pt;line-height:1.25}
+/* outside */
+.flap{background:var(--cream)}
+.flap .h{font-size:14pt;color:var(--blue)}
+.deal{display:grid;grid-template-columns:auto 1fr;gap:.03in .08in;margin-top:.08in;align-items:baseline}
+.deal b{font-family:"Big Shoulders Display",Impact,sans-serif;font-size:15pt;color:var(--night)}
+.deal span{font-size:7pt}
+.back{background:var(--night);color:var(--cream);display:grid;grid-template-columns:1fr auto;gap:.08in;align-items:center}
+.back .h{font-size:13pt;color:var(--gold)}
+.back .ph{font-size:10.5pt;font-weight:700;line-height:1.3;margin-top:.04in}
+.back .url{font-size:6.4pt;opacity:.85;margin-top:.05in}
+.qr{width:0.9in;height:0.9in;background:#fff;padding:.04in;border-radius:4px}
+.qr img,.qr canvas{width:100%!important;height:100%!important;display:block}
+.cover{background:var(--night) var(--art-cover) center/cover no-repeat;color:var(--cream);display:flex;align-items:center;gap:.12in}
+.cover::after{content:"";position:absolute;inset:auto 0 0 0;height:.55in;background:linear-gradient(transparent,rgba(11,23,51,.85))}
+.cover svg.ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:.7in}
+.cover img{width:1.15in;height:1.15in;border-radius:50%;position:relative;z-index:1;box-shadow:0 0 0 2px var(--gold)}
+.cover .t{position:relative;z-index:1}
+.cover .h{font-size:22pt;color:#fff}
+.cover .sub{font-size:7pt;margin-top:.05in;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+/* inside */
+.in{background:var(--cream) var(--art-inside) center/cover no-repeat;border-right:0}
+.in .h{font-size:13.5pt;color:var(--blue)}
+.in .lede{font-size:6.8pt;margin:.03in 0 .05in;color:#3b4560}
+.in ul{list-style:none;padding:0;display:grid;gap:.035in}
+.in li{display:flex;justify-content:space-between;gap:.08in;font-size:7.1pt;border-bottom:0.5px solid #d8cdb9;padding-bottom:.02in}
+.in li em{font-style:normal;font-weight:700;white-space:nowrap}
+.in .foot{position:absolute;left:.16in;right:.16in;bottom:.1in;font-size:6.2pt;color:#5a627a}
+.bolt{color:var(--gold)}
+@media screen{body{background:#ccc}.page{margin:16px auto;background:#fff;box-shadow:0 2px 12px #0003}}
+</style></head><body>
+
+<template id="outside">
+  <div class="strip">
+    <div class="p flap">
+      <div class="h">Neighbor pricing</div>
+      <div class="deal">
+        <b>50%</b><span>off for Swannanoa Valley businesses</span>
+        <b>50%</b><span>off for startups</span>
+        <b>75%</b><span>off for small local startups</span>
+      </div>
+      <div class="small" style="margin-top:.06in">Flat prices, set up in your name, no contract.</div>
+    </div>
+    <div class="p back">
+      <div>
+        <div class="h">Book a free look</div>
+        <div class="small" style="opacity:.8">Call or text</div>
+        <div class="ph">865-978-1063<br>828-740-0010</div>
+        <div class="url">jrns-hub.github.io/bearly-technical</div>
+      </div>
+      <div class="qr"></div>
+    </div>
+    <div class="p cover">
+      <svg class="ridge" viewBox="0 0 350 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 L0 44 L40 30 L70 38 L110 16 L150 34 L185 22 L220 40 L255 18 L300 36 L350 26 L350 70 Z" fill="#2a5ca5" opacity=".55"/><path d="M0 70 L0 56 L60 46 L95 54 L140 40 L190 52 L240 42 L290 54 L350 44 L350 70 Z" fill="#0b1733"/></svg>
+      <img src="img/badge-180.png" alt="Bearly Technical bear badge">
+      <div class="t"><div class="h">Bearly<br>Technical</div><div class="sub">Tech help for Main Street</div></div>
+    </div>
+  </div>
+</template>
+
+<template id="inside">
+  <div class="strip">
+    <div class="p in">
+      <div class="h">Get found</div>
+      <div class="lede">So Maps and Google send people to your door.</div>
+      <ul>
+        <li>Find-me website <em>$400 to $800</em></li>
+        <li>Google listing tune-up <em>$75 to $150</em></li>
+        <li>Review kit with QR card <em>$75 to $150</em></li>
+        <li>Care plan, cancel anytime <em>$75 to $150/mo</em></li>
+      </ul>
+    </div>
+    <div class="p in" style="background-color:#efe4d2">
+      <div class="h">Run smoother</div>
+      <div class="lede">Less phone tag, fewer things falling through.</div>
+      <ul>
+        <li>Online booking <em>$150 to $300</em></li>
+        <li>Quote and order forms <em>$100 to $200</em></li>
+        <li>AI helper for common questions <em>$200 to $500</em></li>
+        <li>Automations and reminders <em>$150 to $500</em></li>
+      </ul>
+    </div>
+    <div class="p in">
+      <div class="h">Nonprofits <span class="bolt">&amp;</span> churches</div>
+      <div class="lede">Find the money, then get it.</div>
+      <ul>
+        <li>Grant readiness report <em>Free</em></li>
+        <li>Walmart Spark Good setup <em>$150</em></li>
+        <li>One grant application <em>$300 to $800</em></li>
+        <li>Donation and volunteer pages <em>$150 to $300</em></li>
+      </ul>
+      <div class="foot">Prices shown before neighbor discounts.</div>
+    </div>
+  </div>
+</template>
+
+<div class="page" id="p1"></div>
+<div class="page" id="p2"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const out=document.getElementById("outside"),ins=document.getElementById("inside");
+for(let i=0;i<4;i++){
+  const o=out.content.cloneNode(true);
+  new QRCode(o.querySelector(".qr"),{text:"https://jrns-hub.github.io/bearly-technical/",width:300,height:300,colorDark:"#0b1733",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});
+  document.getElementById("p1").appendChild(o);
+  document.getElementById("p2").appendChild(ins.content.cloneNode(true));
+}
+</script>
+</body></html>
