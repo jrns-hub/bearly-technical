@@ -19,14 +19,14 @@ html,body{background:#fff;font-family:"Atkinson Hyperlegible","Segoe UI",Arial,s
 .h{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;line-height:.92;letter-spacing:.015em;text-transform:uppercase}
 
 /* OUTSIDE */
-.flap{background:var(--cream)}
+.flap{background:var(--cream) url(img/card-paper.jpg) left center/auto 100% no-repeat}
 .flap .h{font-size:15pt;color:var(--blue)}
 .flap .big{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;font-size:30pt;line-height:.9;color:var(--night);margin-top:.08in}
 .flap .big span{color:var(--gold);-webkit-text-stroke:0.6px #b88300}
 .flap .who{font-size:7.4pt;line-height:1.35;margin-top:.05in;color:#3b4560}
 .flap .partner{position:absolute;left:.18in;right:.18in;bottom:.14in;font-size:6.8pt;line-height:1.3;color:var(--blue);font-weight:700;border-top:1px solid #d9ccb5;padding-top:.05in}
 
-.back{background:var(--cream);display:grid;grid-template-columns:auto 1fr;gap:.14in;align-items:center;border-left:1px solid #e3d8c4}
+.back{background:var(--cream) url(img/card-paper.jpg) right center/auto 100% no-repeat;display:grid;grid-template-columns:auto 1fr;gap:.14in;align-items:center;border-left:1px solid #e3d8c4}
 .back .qrbox{width:1.42in;height:1.42in;background:#fff;border-radius:.09in;padding:.09in;box-shadow:inset 0 0 0 .03in var(--night)}
 .back .qr img,.back .qr canvas{width:100%!important;height:100%!important;display:block}
 .back .scan{font-size:11pt;color:var(--blue)}
@@ -34,7 +34,7 @@ html,body{background:#fff;font-family:"Atkinson Hyperlegible","Segoe UI",Arial,s
 .back .phone{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;font-size:15.5pt;white-space:nowrap;color:var(--night);line-height:1;margin-top:.02in}
 .back .stripe{position:absolute;left:0;right:0;bottom:0;height:.06in;background:var(--gold)}
 
-.cover{background:var(--night);color:#fff}
+.cover{background:var(--night) url(img/card-cover.jpg) center 70%/cover no-repeat;color:#fff}
 .cover svg{position:absolute;inset:0;width:100%;height:100%}
 .cover .logo{position:absolute;left:.17in;top:.29in;width:1.38in;height:1.38in;border-radius:50%;box-shadow:0 0 0 .033in var(--gold),0 0 .18in rgba(242,181,26,.35)}
 .cover .words{position:absolute;left:1.74in;top:.4in;right:.12in}
@@ -45,8 +45,9 @@ html,body{background:#fff;font-family:"Atkinson Hyperlegible","Segoe UI",Arial,s
 .cover .open{position:absolute;right:.14in;bottom:.12in;font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
 
 /* INSIDE */
-.in{background:var(--cream);border-right:1px solid #e3d8c4}
-.in:nth-child(2){background:#efe4d2}
+.in-strip{background:var(--cream) url(img/card-paper.jpg) center/cover no-repeat}
+.in{background:transparent;border-right:1px solid rgba(160,140,110,.35)}
+.in:nth-child(2){background:rgba(232,219,196,.45)}
 .in:last-child{border-right:0}
 .in .num{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;font-size:9pt;color:var(--gold);letter-spacing:.1em}
 .in .h{font-size:15pt;color:var(--blue);margin-top:.01in}
@@ -75,13 +76,6 @@ html,body{background:#fff;font-family:"Atkinson Hyperlegible","Segoe UI",Arial,s
       <div class="stripe"></div>
     </div>
     <div class="p cover">
-      <svg viewBox="0 0 350 200" preserveAspectRatio="none" aria-hidden="true">
-        <defs><radialGradient id="glow" cx="22%" cy="48%" r="60%"><stop offset="0" stop-color="#1d3a78" stop-opacity=".9"/><stop offset="1" stop-color="#0b1733" stop-opacity="0"/></radialGradient></defs>
-        <rect width="350" height="200" fill="url(#glow)"/>
-        <g fill="#f2b51a"><circle cx="300" cy="24" r=".9"/><circle cx="262" cy="16" r=".7"/><circle cx="332" cy="52" r=".7"/><circle cx="214" cy="12" r=".6"/></g>
-        <path d="M0 200 L0 168 L40 152 L78 162 L120 138 L160 156 L196 142 L232 160 L270 136 L310 154 L350 144 L350 200 Z" fill="#2a5ca5" opacity=".38"/>
-        <path d="M0 200 L0 182 L55 172 L98 180 L150 166 L205 178 L258 168 L305 180 L350 172 L350 200 Z" fill="#081127"/>
-      </svg>
       <img class="logo" src="img/badge.png" alt="Bearly Technical bear badge">
       <div class="words">
         <div class="brand">Bearly<br><span>Technical</span></div>
@@ -94,7 +88,7 @@ html,body{background:#fff;font-family:"Atkinson Hyperlegible","Segoe UI",Arial,s
 </template>
 
 <template id="inside">
-  <div class="strip">
+  <div class="strip in-strip">
     <div class="p in">
       <div class="num">01</div>
       <div class="h">Get found</div>
