@@ -67,7 +67,7 @@ html,body{background:#fff;font-family:"Atkinson Hyperlegible","Segoe UI",Arial,s
       <div class="partner">Or one monthly plan, and I'm your tech partner for all of it.</div>
     </div>
     <div class="p back">
-      <div class="qrbox"><div class="qr"></div></div>
+      <div class="qrbox"><div class="qr"><img src="img/bear-qr.png" alt="QR code to the Bearly Technical site"></div></div>
       <div>
         <div class="h scan">Scan to see<br>what I can do</div>
         <div class="label">Call or text</div>
@@ -128,11 +128,10 @@ html,body{background:#fff;font-family:"Atkinson Hyperlegible","Segoe UI",Arial,s
 <div class="page"><div class="stack" id="s1"></div></div>
 <div class="page"><div class="stack" id="s2"></div></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 for(let i=0;i<4;i++){
   const o=document.getElementById("outside").content.cloneNode(true);
-  new QRCode(o.querySelector(".qr"),{text:"https://jrns-hub.github.io/bearly-technical/",width:400,height:400,colorDark:"#0b1733",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.Q});
+  // QR art comes from bear_qr.py (img/bear-qr.png)
   document.getElementById("s1").appendChild(o);
   document.getElementById("s2").appendChild(document.getElementById("inside").content.cloneNode(true));
 }

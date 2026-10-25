@@ -56,7 +56,7 @@ html,body{background:#fff}
 
 <template id="back">
   <div class="card back">
-    <div class="qrbox"><div class="qr"></div></div>
+    <div class="qrbox"><div class="qr"><img src="img/bear-qr.png" alt="QR code to the Bearly Technical site"></div></div>
     <div class="info">
       <div class="scan">Scan to see<br>what I can do</div>
       <div class="label">Call or text</div>
@@ -70,13 +70,11 @@ html,body{background:#fff}
 <div class="page fronts"><div class="bleed"></div><div class="grid" id="g1"></div></div>
 <div class="page backs"><div class="bleed"></div><div class="grid" id="g2"></div></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-const URL_="https://jrns-hub.github.io/bearly-technical/";
+// QR art comes from bear_qr.py (img/bear-qr.png)
 for(let i=0;i<10;i++){
   document.getElementById("g1").appendChild(document.getElementById("front").content.cloneNode(true));
   const b=document.getElementById("back").content.cloneNode(true);
-  new QRCode(b.querySelector(".qr"),{text:URL_,width:400,height:400,colorDark:"#0b1733",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.Q});
   document.getElementById("g2").appendChild(b);
 }
 // crop marks just outside the bleed, at every cut line
